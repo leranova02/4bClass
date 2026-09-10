@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание — 4 «Б» класс</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- БАННЕР -->
+  <header class="banner">
+    <div class="banner-number">4</div>
+    <span class="banner-star banner-star--1">★</span>
+    <span class="banner-star banner-star--2">✦</span>
+    <span class="banner-star banner-star--3">★</span>
+
+        <a href="index.html" class="top-logo">
+      <img src="images/logo.png" alt="Логотип 4 «Б» класса">
+    </a>
+
+    <div class="banner-content">
+      <span class="banner-kicker">2026/2027 учебный год</span>
+      <h1>Расписание<br><em>уроков и звонков</em></h1>
+      <p class="banner-sub">учимся с интересом — растём с радостью!</p>
+      <div class="banner-actions">
+        <a href="homework.html" class="btn btn--dark">Домашка на завтра</a>
+        <a href="index.html" class="btn btn--light">На главную</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- МЕНЮ -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></svg>
+        Главная
+      </a>
+      <a href="schedule.html" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Расписание
+      </a>
+      <a href="homework.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M15 4v5h5M8 13h8M8 17h5"/></svg>
+        Домашка
+      </a>
+      <a href="news.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v9a2 2 0 0 1-2 2h-1M8 9h6M8 13h6"/></svg>
+        Новости
+      </a>
+      <a href="materials.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+        Материалы
+      </a>
+      <a href="contacts.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg>
+        Контакты
+      </a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="container">
+
+              <!-- НАПОМИНАНИЯ -->
+      <section class="reminders" id="reminders-section">
+        <div class="reminders-head">
+          <span class="reminders-head-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          </span>
+          <div>
+            <h2>Не забудь!</h2>
+            <p>что взять в школу</p>
+          </div>
+        </div>
+        <div class="reminders-list" id="reminders-list"></div>
+      </section>
+
+      <!-- УРОКИ НА НЕДЕЛЮ -->
+      <section class="page-section">
+        <div class="section-head">
+          <h2>Расписание на неделю</h2>
+          <span class="section-meta">все дни сразу</span>
+        </div>
+        <div class="week" id="week"></div>
+      </section>
+
+      <!-- ЗВОНКИ -->
+      <section class="page-section">
+        <div class="section-head">
+          <h2>Расписание звонков</h2>
+          <span class="section-meta">время уроков и перемен</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Урок</th>
+                <th>Начало</th>
+                <th>Конец</th>
+                <th>Перемена</th>
+              </tr>
+            </thead>
+            <tbody id="bells-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- КАНИКУЛЫ -->
+      <section class="page-section">
+        <div class="section-head">
+          <h2>Каникулы</h2>
+          <span class="section-meta">2026/2027 учебный год</span>
+        </div>
+        <div class="timeline" id="holidays-timeline"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ФУТЕР -->
+    <footer class="footer">
+    <div class="footer-inner">
+
+      <a href="index.html" class="footer-brand">
+        <img src="images/logo.png" alt="">
+        4 «Б» <em>класс</em>
+      </a>
+
+      <nav class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="schedule.html">Расписание</a>
+        <a href="homework.html">Домашка</a>
+        <a href="news.html">Новости</a>
+        <a href="materials.html">Материалы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+
+      <p class="footer-copy">© 2026 · МБОУ МНОШ</p>
+
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    // Прокрутить меню к активному пункту
+document.addEventListener('DOMContentLoaded', function () {
+  const activeLink = document.querySelector('.nav a.active');
+  if (activeLink) {
+    activeLink.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'auto' });
+  }
+});
+    const WEEKDAYS = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
+    const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+    const DAY_NAMES = { 1: 'Понедельник', 2: 'Вторник', 3: 'Среда', 4: 'Четверг', 5: 'Пятница', 6: 'Суббота' };
+
+    function toKey(d) {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return y + '-' + m + '-' + day;
+    }
+
+    function pluralDays(n) {
+      const m100 = n % 100, m10 = n % 10;
+      if (m100 >= 11 && m100 <= 14) return 'дней';
+      if (m10 === 1) return 'день';
+      if (m10 >= 2 && m10 <= 4) return 'дня';
+      return 'дней';
+    }
+
+    /* ---------- УРОКИ НА НЕДЕЛЮ ---------- */
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayIndex = today.getDay();
+
+    const weekEl = document.getElementById('week');
+
+    [1, 2, 3, 4, 5, 6].forEach(function (dayIndex) {
+      const lessons = (window.schedule && window.schedule[dayIndex]) || [];
+      const dayBlock = document.createElement('div');
+      dayBlock.className = 'day-block';
+      if (dayIndex === todayIndex) dayBlock.classList.add('day-block--today');
+
+      const head = document.createElement('div');
+      head.className = 'day-block-head';
+      let headHTML = '<h3>' + DAY_NAMES[dayIndex] + '</h3>';
+      if (dayIndex === todayIndex) headHTML += '<span class="today-badge">Сегодня</span>';
+      head.innerHTML = headHTML;
+      dayBlock.appendChild(head);
+
+      if (lessons.length === 0) {
+        const empty = document.createElement('p');
+        empty.className = 'day-empty';
+        empty.textContent = 'Уроков нет';
+        dayBlock.appendChild(empty);
+      } else {
+        const list = document.createElement('ol');
+        list.className = 'lesson-list';
+        lessons.forEach(function (lesson) {
+          const li = document.createElement('li');
+          li.innerHTML = '<span class="lesson-num">' + String(lesson.num).padStart(2, '0') + '</span>' +
+                         '<span class="lesson-name">' + lesson.name + '</span>' +
+                         '<span class="lesson-room">' + lesson.room + '</span>';
+          list.appendChild(li);
+        });
+        dayBlock.appendChild(list);
+      }
+
+      weekEl.appendChild(dayBlock);
+    });
+
+    /* ---------- ЗВОНКИ ---------- */
+    const bellsEl = document.getElementById('bells-table');
+    if (bellsEl && window.bells) {
+      let html = '';
+      window.bells.forEach(function (b) {
+        html += '<tr>' +
+                  '<td class="num">' + String(b.num).padStart(2, '0') + '</td>' +
+                  '<td>' + b.start + '</td>' +
+                  '<td>' + b.end + '</td>' +
+                  '<td class="muted">' + b.break + '</td>' +
+                '</tr>';
+      });
+      bellsEl.innerHTML = html;
+    }
+
+    /* ---------- КАНИКУЛЫ (таймлайн) ---------- */
+    const timeline = document.getElementById('holidays-timeline');
+
+    if (timeline && window.holidays) {
+      window.holidays.forEach(function (h) {
+        const target = new Date(h.start + 'T00:00:00');
+        const diff = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+
+        let itemClass = 'timeline-item';
+        let countdownText;
+
+        if (diff > 0) {
+          countdownText = 'До каникул: <strong>' + diff + ' ' + pluralDays(diff) + '</strong>';
+          if (diff < 60) itemClass += ' next';
+        } else if (diff === 0) {
+          countdownText = 'Начинаются <strong>сегодня!</strong>';
+          itemClass += ' next';
+        } else {
+          countdownText = 'Уже прошли';
+          itemClass += ' past';
+        }
+
+        const item = document.createElement('div');
+        item.className = itemClass;
+        item.innerHTML =
+          '<h3 class="timeline-name">' + h.title + '</h3>' +
+          '<span class="timeline-days">' + h.days + '</span>' +
+          '<p class="timeline-dates">' + h.dates + '</p>' +
+          '<p class="timeline-countdown">' + countdownText + '</p>';
+        timeline.appendChild(item);
+      });
+    }
+        /* ---------- НАПОМИНАНИЯ ---------- */
+    const ICONS = {
+      shoes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18v-3c0-2-2-3-4-3h-2l-3-3H8v3l-3 2c-1 .5-2 1.5-2 3z"/><path d="M9 12h3"/></svg>',
+      pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 1 1 3 3L7 19l-4 1 1-4z"/></svg>',
+      sport: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5 5l14 14M19 5L5 19"/></svg>',
+      book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M15 4v5h5M8 13h8M8 17h5"/></svg>',
+      bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>',
+      bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l-3 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-3-7z"/><path d="M3 9h18M16 13a4 4 0 0 1-8 0"/></svg>'
+    };
+
+    const remindersList = document.getElementById('reminders-list');
+    if (remindersList && window.reminders) {
+      const active = window.reminders.filter(function (r) { return r.active; });
+      if (active.length === 0) {
+        const section = document.getElementById('reminders-section');
+        if (section) section.style.display = 'none';
+      } else {
+        active.forEach(function (r) {
+          const icon = ICONS[r.icon] || ICONS.bell;
+          const el = document.createElement('div');
+          el.className = 'reminder';
+          el.innerHTML =
+            '<span class="reminder-icon">' + icon + '</span>' +
+            '<div class="reminder-body">' +
+              '<h3>' + r.title + '</h3>' +
+              '<p>' + r.text + '</p>' +
+            '</div>';
+          remindersList.appendChild(el);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
