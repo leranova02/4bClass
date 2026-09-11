@@ -214,7 +214,7 @@ window.materials = [
   {
     title: 'ВПР по математике — демо',
     desc: 'Демонстрационный вариант 2026',
-    file: 'files/vpr-math.pdf',
+    file: 'images/Впр1.pdf',
     tag: 'vpr',
     isNew: true               // это «новое», появится бейдж
   },
